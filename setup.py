@@ -74,7 +74,7 @@ class BuildDoom(DistutilsBuild):
         DistutilsBuild.run(self)
 
 setup(name='doom-py',
-      version='0.0.18',
+      version='0.0.19',
       description='Python bindings to ViZDoom',
       url='https://github.com/jaekyeom/doom-py',
       author='OpenAI Community',
