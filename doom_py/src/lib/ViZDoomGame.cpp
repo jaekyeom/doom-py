@@ -630,6 +630,14 @@ namespace vizdoom {
         if(str == "user29")     return USER29;
         if(str == "user30")     return USER30;
 
+        if(str == "position_x") return POSITION_X;
+        if(str == "position_y") return POSITION_Y;
+        if(str == "position_z") return POSITION_Z;
+        if(str == "angle")      return ANGLE;
+        if(str == "velocity_x") return VELOCITY_X;
+        if(str == "velocity_y") return VELOCITY_Y;
+        if(str == "velocity_z") return VELOCITY_Z;
+
         throw std::exception();
     }
 

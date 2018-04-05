@@ -300,11 +300,19 @@ bp::register_exception_translator< n >(&translate ## n );
         ENUM_VAL_2_PYT(USER27)
         ENUM_VAL_2_PYT(USER28)
         ENUM_VAL_2_PYT(USER29)
-        ENUM_VAL_2_PYT(USER30);
+        ENUM_VAL_2_PYT(USER30)
+        ENUM_VAL_2_PYT(POSITION_X)
+        ENUM_VAL_2_PYT(POSITION_Y)
+        ENUM_VAL_2_PYT(POSITION_Z)
+        ENUM_VAL_2_PYT(ANGLE)
+        ENUM_VAL_2_PYT(VELOCITY_X)
+        ENUM_VAL_2_PYT(VELOCITY_Y)
+        ENUM_VAL_2_PYT(VELOCITY_Z);
 
     def("doom_tics_to_ms", DoomTicsToMs);
     def("ms_to_doom_tics", MsToDoomTics);
     def("doom_fixed_to_double", DoomFixedToDouble);
+    def("doom_angle_to_double", DoomAngleToDouble);
 
     class_<GameStatePython>("GameState", no_init)
         .def_readonly("number", &GameStatePython::number)

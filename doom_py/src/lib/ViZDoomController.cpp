@@ -682,6 +682,20 @@ namespace vizdoom {
                 return this->gameVariables->PLAYER_SELECTED_WEAPON;
             case SELECTED_WEAPON_AMMO :
                 return this->gameVariables->PLAYER_SELECTED_WEAPON_AMMO;
+            case POSITION_X :
+                return this->gameVariables->PLAYER_MOVEMENT_CUSTOM[0];
+            case POSITION_Y :
+                return this->gameVariables->PLAYER_MOVEMENT_CUSTOM[1];
+            case POSITION_Z :
+                return this->gameVariables->PLAYER_MOVEMENT_CUSTOM[2];
+            case ANGLE :
+                return this->gameVariables->PLAYER_MOVEMENT_CUSTOM[3];
+            case VELOCITY_X :
+                return this->gameVariables->PLAYER_MOVEMENT_CUSTOM[4];
+            case VELOCITY_Y :
+                return this->gameVariables->PLAYER_MOVEMENT_CUSTOM[5];
+            case VELOCITY_Z :
+                return this->gameVariables->PLAYER_MOVEMENT_CUSTOM[6];
         }
         if(var >= AMMO0 && var <= AMMO9){
             return this->gameVariables->PLAYER_AMMO[var - AMMO0];

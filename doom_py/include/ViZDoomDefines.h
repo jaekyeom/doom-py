@@ -30,6 +30,8 @@ namespace vizdoom{
     #define VIZDOOM_LIB_VERSION 102
     #define VIZDOOM_LIB_VERSION_STR "1.0.2"
 
+    #define ANGLE_MAX   (0xffffffff)
+
     typedef unsigned char uint8_t;
 
     struct GameState {
@@ -176,6 +178,14 @@ namespace vizdoom{
         USER28,
         USER29,
         USER30,
+
+        POSITION_X,
+        POSITION_Y,
+        POSITION_Z,
+        ANGLE,
+        VELOCITY_X,
+        VELOCITY_Y,
+        VELOCITY_Z,
     };
 
     static const int UserVariablesNumber = 30;

@@ -44,6 +44,11 @@ namespace vizdoom {
     double DoomFixedToDouble(int doomFixed);
 
     /*
+     * Converts Doom's angle to a double value.
+     */
+    double DoomAngleToDouble(int angle);
+
+    /*
      * Returns true if button is binary button.
      */
     bool isBinaryButton(Button button);

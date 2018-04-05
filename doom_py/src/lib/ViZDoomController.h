@@ -148,6 +148,8 @@ namespace vizdoom{
             int PLAYERS_COUNT;
             char PLAYERS_NAME[MaxNumberOfPlayers][16];
             int PLAYERS_FRAGCOUNT[MaxNumberOfPlayers];
+
+            int PLAYER_MOVEMENT_CUSTOM[7];
         };
 
         DoomController();

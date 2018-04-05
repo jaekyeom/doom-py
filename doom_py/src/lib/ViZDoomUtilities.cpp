@@ -37,6 +37,11 @@ namespace vizdoom {
         return res;
     }
 
+    double DoomAngleToDouble(int doomAngle) {
+        const unsigned int angle = static_cast<unsigned int>(doomAngle);
+        return static_cast<double>(angle) / ANGLE_MAX * 360;
+    }
+
     bool isBinaryButton(Button button){
         return button < BinaryButtonsNumber;
     }

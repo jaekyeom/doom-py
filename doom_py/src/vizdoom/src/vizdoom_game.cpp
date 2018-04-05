@@ -41,6 +41,14 @@ player_t *vizdoomPlayer;
 bip::mapped_region *vizdoomGameVarsSMRegion = NULL;
 ViZDoomGameVarsStruct *vizdoomGameVars = NULL;
 
+inline double ViZDoom_FixedToDouble(fixed_t fixed){
+    return static_cast<double>(fixed) / 65536.0;
+}
+
+inline double ViZDoom_AngleToDouble(angle_t angle) {
+    return static_cast<double>(angle) / ANGLE_MAX * 360;
+}
+
 int ViZDoom_CheckItem(FName name) {
     if(vizdoomPlayer->mo != NULL) {
         AInventory *item = vizdoomPlayer->mo->FindInventory(name);
@@ -201,6 +209,19 @@ void ViZDoom_GameVarsTic(){
             strncpy(vizdoomGameVars->PLAYERS_NAME[i], players[i].userinfo.GetName(), VIZDOOM_MAX_PLAYER_NAME_LEN);
             vizdoomGameVars->PLAYERS_FRAGCOUNT[i] = players[i].fragcount;
         }
+    }
+
+
+    if (vizdoomPlayer->mo) {
+        // As the return type of DoomController::getGameVariable() is int, we cannot convert them to double here.
+        // If we want, we can use ViZDoom_FixedToDouble and ViZDoom_AngleToDouble.
+        vizdoomGameVars->PLAYER_MOVEMENT_CUSTOM[0] = vizdoomPlayer->mo->X();
+        vizdoomGameVars->PLAYER_MOVEMENT_CUSTOM[1] = vizdoomPlayer->mo->Y();
+        vizdoomGameVars->PLAYER_MOVEMENT_CUSTOM[2] = vizdoomPlayer->mo->Z();
+        vizdoomGameVars->PLAYER_MOVEMENT_CUSTOM[3] = static_cast<int>(vizdoomPlayer->mo->angle);
+        vizdoomGameVars->PLAYER_MOVEMENT_CUSTOM[4] = vizdoomPlayer->mo->velx;
+        vizdoomGameVars->PLAYER_MOVEMENT_CUSTOM[5] = vizdoomPlayer->mo->vely;
+        vizdoomGameVars->PLAYER_MOVEMENT_CUSTOM[6] = vizdoomPlayer->mo->velz;
     }
 }
 
